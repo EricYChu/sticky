@@ -84,21 +84,6 @@ System.register('flarum/sticky/addStickyExcerpt', ['flarum/extend', 'flarum/comp
     });
 
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
-      var discussion = this.props.discussion;
-
-      if (discussion.isSticky()) {
-        var startPost = discussion.startPost();
-
-        if (startPost) {
-          var excerpt = m(
-            'span',
-            null,
-            truncate(startPost.contentPlain(), 200)
-          );
-
-          items.add('excerpt', excerpt, -100);
-        }
-      }
     });
   }
 
